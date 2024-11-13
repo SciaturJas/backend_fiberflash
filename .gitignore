@@ -1,0 +1,15 @@
+
+*.maceta
+*.pyc
+.idea
+.DS_Store
+.Python
+env/
+.venv/
+venv/
+.vscode/
+__pycache__/
+apps/*.pyc
+config/*.pyc
+.env
+.vscode/settings.json
