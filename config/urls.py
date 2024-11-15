@@ -16,7 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.http import JsonResponse
-from django.urls import path
+from django.urls import path, include
 from rest_framework_simplejwt.views import (
     TokenObtainPairView,
     TokenRefreshSlidingView,
@@ -30,4 +30,11 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', main_view, name='/'),
     path('api/token/', TokenObtainPairView.as_view(), name='token_obtain'),
+    path('api/admin/', include('apps.admin.urls')),
+    path('api/auth/', include('apps.auth.urls')),
+    path('api/cobranza/', include('apps.cobranza.urls')),
+    path('api/sales/', include('apps.sales.urls')),
+    path('api/tecnic/', include('apps.tecnic.urls')),
+    path('api/users/', include('apps.users.urls')),
+    path('api/utils/', include('apps.utils.urls')),
 ]
